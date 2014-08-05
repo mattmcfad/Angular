@@ -9,6 +9,7 @@ Demo to describe the following:
 * ng-controller
 * ng-repeat
 * ng-show & ng-hide
+* ng-src
 * ng-click
 * ng-class
 * filters
