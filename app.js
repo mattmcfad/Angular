@@ -1,3 +1,5 @@
 (function(){
-	console.log("JavaScript Works!");
+
+	var app = angular.module('store',[]);
+
 })();
