@@ -1,3 +1,3 @@
 (function(){
-	console.log("JavaScript Works!");
+	console.log("Hello World! - JavaScript works");
 })();
