@@ -25,16 +25,31 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 
 .wrapper
   margin 0 auto
-  max-width 1000px
+  max-width 750px
 
 h1
 	text-align center
 	font-size 64px
 
 .burger
-  img
-    width: 33%
+  margin 10px
+  height 300px
+  .half
+    float left
+  .left
+    width 30%
+    padding 10px
+    background-color #2980b9
+  .right
+    width 70%
+    img.full
+      width 33%
+      display block
+      max-height 200px
+    img.thumb
+      width 100px
+      height 100px
 
-
-
-
+    img.selected
+      border 3px #3498db solid
+    
