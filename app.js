@@ -1,5 +1,3 @@
 (function(){
-
-	var app = angular.module('store',[]);
-
+	console.log("Hello World! - JavaScript works");
 })();
