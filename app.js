@@ -5,7 +5,7 @@
 		this.menu = menu;
 	});
 
-	app.controller('burgerController',function(){
+	app.controller('imageController',function(){
 		//default image selected from menu.images[] array
 		this.selected = 0;
 
