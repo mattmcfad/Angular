@@ -18,7 +18,12 @@
 			
 			<div class="burger clearfix" ng-repeat="burger in Menu.menu">
 				<div class="half left">
-					<h3>{{burger.name}}</h3>
+					<h3>{{burger.name | uppercase}}</h3>
+					<p>Price: {{burger.price | currency}}</p>
+					<p>Calories: {{burger.calories}}kCal</p>
+					<p>Fat: {{burger.fat}}</p>
+					<p>Carbs: {{burger.carbs}}</p>
+					<p>Protein: {{burger.protein}}</p>
 				</div>
 			</div>
 
