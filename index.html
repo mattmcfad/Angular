@@ -28,7 +28,7 @@
 					<p>Fat: {{Burger.fat}}</p>
 					<p>Carbs: {{Burger.carbs}}</p>
 					<p>Protein: {{Burger.protein}}</p>
-					<button ng-click="imageCtrlr.hidden = true">Hide me!</button>
+					<button ng-click="imageCtrlr.hidden = !imageCtrlr.hidden">{{imageCtrlr.hidden ? 'Show Me' : 'Hide me'}}</button>
 				</div>
 				<div ng-hide="imageCtrlr.hidden" class="half right">
 					<img class="full" ng-src="{{Burger.images[imageCtrlr.selected]}}">
@@ -48,7 +48,6 @@
 					ng-click="imageCtrlr.setSelected(2)" 
 					ng-src="{{Burger.images[2]}}">
 				</div>
-				<button ng-show="imageCtrlr.hidden" ng-click="imageCtrlr.hidden=false">Show me!</button>
 			</div>	
 		</div>
 	</div>
