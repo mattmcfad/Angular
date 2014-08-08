@@ -5,6 +5,7 @@
 	<title>Matt's Burger Joint</title>
 	<link rel="stylesheet" href="style.css">
 	
+	<!-- ANGULAR NEEDS TO BE FIRST -->
 	<script src="angular.js"></script>
 
 	<script src="menu.js"></script>
@@ -19,99 +20,37 @@
 		<h2>Our Burgers</h2>
 		<div class="burger-list" ng-controller="menuController as Menu">
 
-		<div ng-repeat="Burger in Menu.menu" class="burger clearfix">
-			<div class="half left">
-				<h3>{{Burger.name}}</h3>
-				<p>Price: ${{Burger.price}}</p>
-				<p>Calories: {{Burger.calories}}kCal</p>
-				<p>Fat: {{Burger.fat}}</p>
-				<p>Carbs: {{Burger.carbs}}</p>
-				<p>Protein: {{Burger.protein}}</p>
-			</div>
-		</div>
-
-			<div class="burger clearfix">
+			<div ng-repeat="Burger in Menu.menu" class="burger clearfix" ng-controller="imageController as imageCtrlr">
 				<div class="half left">
-					<h3>The American</h3>
-					<p>Price: $11</p>
-					<p>Calories: 420kCal</p>
-					<p>Fat: 15g</p>
-					<p>Carbs: 34g</p>
-					<p>Protein: 40g</p>
+					<h3>{{Burger.name | uppercase}}</h3>
+					<p>Price: {{Burger.price | currency}}</p>
+					<p>Calories: {{Burger.calories}}kCal</p>
+					<p>Fat: {{Burger.fat}}</p>
+					<p>Carbs: {{Burger.carbs}}</p>
+					<p>Protein: {{Burger.protein}}</p>
+					<button ng-click="imageCtrlr.hidden = true">Hide me!</button>
 				</div>
-				<div class="half right">
-					<img class="full" src="images/american1.jpg">
-					<img class="thumb selected" src="images/american1.jpg">
-					<img class="thumb" src="images/american2.jpg">
-					<img class="thumb" src="images/american3.jpg">				
+				<div ng-hide="imageCtrlr.hidden" class="half right">
+					<img class="full" ng-src="{{Burger.images[imageCtrlr.selected]}}">
+					<!-- first image -->
+					<img class="thumb"
+					ng-class="{selected:imageCtrlr.selected === 0}"
+					ng-click="imageCtrlr.setSelected(0)" 
+					ng-src="{{Burger.images[0]}}">
+					<!-- second image -->
+					<img class="thumb"
+					ng-class="{selected:imageCtrlr.selected === 1}"
+					ng-click="imageCtrlr.setSelected(1)" 
+					ng-src="{{Burger.images[1]}}">
+					<!-- third image -->
+					<img class="thumb"
+					ng-class="{selected:imageCtrlr.selected === 2}"
+					ng-click="imageCtrlr.setSelected(2)" 
+					ng-src="{{Burger.images[2]}}">
 				</div>
-			</div>
-			<div class="burger clearfix">
-				<div class="half left">
-					<h3>The Canuck</h3>
-					<p>Price: $9</p>
-					<p>Calories: 666kCal</p>
-					<p>Fat: 25g</p>
-					<p>Carbs: 55g</p>
-					<p>Protein: 60g</p>
-				</div>
-				<div class="half right">
-					<img class="full" src="images/canuck1.jpg">
-					<img class="thumb selected" src="images/canuck1.jpg">
-					<img class="thumb" src="images/canuck2.jpg">
-					<img class="thumb" src="images/canuck3.jpg">				
-				</div>
-			</div>
-			<div class="burger clearfix">
-				<div class="half left">
-					<h3>The Deluxe</h3>
-					<p>Price: $12</p>
-					<p>Calories: 500kCal</p>
-					<p>Fat: 22g</p>
-					<p>Carbs: 55g</p>
-					<p>Protein: 45g</p>
-				</div>
-				<div class="half right">
-					<img class="full" src="images/deluxe1.jpg">
-					<img class="thumb selected" src="images/deluxe1.jpg">
-					<img class="thumb" src="images/deluxe2.jpg">
-					<img class="thumb" src="images/deluxe3.jpg">				
-				</div>
-			</div>
-			<div class="burger clearfix">
-				<div class="half left">
-					<h3>The Baconator</h3>
-					<p>Price: $6</p>
-					<p>Calories: 750kCal</p>
-					<p>Fat: 40g</p>
-					<p>Carbs: 60g</p>
-					<p>Protein: 93g</p>
-				</div>
-				<div class="half right">
-					<img class="full" src="images/baconator1.jpg">
-					<img class="thumb selected" src="images/baconator1.jpg">
-					<img class="thumb" src="images/baconator2.jpg">
-					<img class="thumb" src="images/baconator3.jpg">				
-				</div>
-			</div>
-			<div class="burger clearfix">
-				<div class="half left">
-					<h3>The Big Mac</h3>
-					<p>Price: $5</p>
-					<p>Calories: 430kCal</p>
-					<p>Fat: 35g</p>
-					<p>Carbs: 25g</p>
-					<p>Protein: 30g</p>
-				</div>
-				<div class="half right">
-					<img class="full" src="images/bigmac1.jpg">
-					<img class="thumb selected" src="images/bigmac1.jpg">
-					<img class="thumb" src="images/bigmac2.jpg">
-					<img class="thumb" src="images/bigmac3.jpg">				
-				</div>
+				<button ng-show="imageCtrlr.hidden" ng-click="imageCtrlr.hidden=false">Show me!</button>
 			</div>	
 		</div>
 	</div>
-
 </body>
 </html>
