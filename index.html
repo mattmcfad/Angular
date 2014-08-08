@@ -28,10 +28,20 @@
 				<div class="half right" ng-controller="imageController as imageCtrlr">
 					<!-- Large Image -->
 					<img ng-src="{{burger.images[imageCtrlr.selected]}}" class="full">
+					
 					<!-- Thumbnails -->
-					<img ng-click="imageCtrlr.setSelected(0)" ng-src="{{burger.images[0]}}" class="thumb selected">
-					<img ng-click="imageCtrlr.setSelected(1)" ng-src="{{burger.images[1]}}" class="thumb">
-					<img ng-click="imageCtrlr.setSelected(2)" ng-src="{{burger.images[2]}}" class="thumb">
+					<!-- first thumbnail -->
+					<img ng-class="{selected: imageCtrlr.selected ===0 }" 
+					     ng-click="imageCtrlr.setSelected(0)" 
+					     ng-src="{{burger.images[0]}}" class="thumb">
+					<!-- second thumbnail -->
+					<img ng-class="{selected: imageCtrlr.selected ===1 }" 
+					     ng-click="imageCtrlr.setSelected(1)" 
+					     ng-src="{{burger.images[1]}}" class="thumb">
+					<!-- third thumbnail -->
+					<img ng-class="{selected: imageCtrlr.selected ===2 }" 
+					     ng-click="imageCtrlr.setSelected(2)" 
+					     ng-src="{{burger.images[2]}}" class="thumb">
 				</div>
 			</div><!-- burger -->
 		</div><!-- burger list -->
