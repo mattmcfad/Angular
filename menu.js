@@ -1,6 +1,6 @@
 var menu = [
 	{
-		'burger': 'The American',
+		'name': 'The American',
 		'price' : 11,
 		'calories' : 420,
 		'fat' : 15,
@@ -13,7 +13,7 @@ var menu = [
 		] 
 	},
 	{
-		'burger': 'The Canuck',
+		'name': 'The Canuck',
 		'price' : 9,
 		'calories' : 666,
 		'fat' : 25,
@@ -26,7 +26,7 @@ var menu = [
 		] 
 	},
 	{
-		'burger': 'The Deluxe',
+		'name': 'The Deluxe',
 		'price' : 12,
 		'calories' : 500,
 		'fat' : 25,
@@ -39,7 +39,7 @@ var menu = [
 		] 
 	},
 	{
-		'burger': 'The Baconator',
+		'name': 'The Baconator',
 		'price' : 6,
 		'calories' : 750,
 		'fat' : 40,
@@ -52,7 +52,7 @@ var menu = [
 		] 
 	},
 	{
-		'burger': 'The Big Mac',
+		'name': 'The Big Mac',
 		'price' : 5,
 		'calories' : 430,
 		'fat' : 38,

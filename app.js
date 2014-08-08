@@ -3,5 +3,8 @@
 
 	app.controller('menuController',function(){
 		this.menu = menu;
+
 	});
+
+
 })();

@@ -11,12 +11,20 @@
 <body>
 	<div class="wrapper">
 		<h1>Matt's Burger Joint</h1>
-		<h1>{{5+3}}</h1>
 		<h2>About us</h2>
 		<p>Bacon ipsum dolor sit amet turkey frankfurter tri-tip pork short loin chicken. T-bone jerky shoulder ball tip, sausage pancetta bacon. Tri-tip t-bone meatball kielbasa meatloaf, chuck shoulder kevin beef ribs pig filet mignon pancetta chicken. Beef ribs t-bone ribeye, capicola salami tongue jowl pork chop shoulder fatback chuck turducken shank beef.</p>
 		<h2>Our Burgers</h2>
 		<div class="burger-list" ng-controller="menuController as Menu">
-			<h3>{{Menu.menu[0].burger}}</h3>
+			
+			<div class="burger clearfix" ng-repeat="burger in Menu.menu">
+				<div class="half left">
+					<h3>{{burger.name}}</h3>
+				</div>
+			</div>
+
+
+
+
 			<div class="burger clearfix">
 				<div class="half left">
 					<h3>The American</h3>
